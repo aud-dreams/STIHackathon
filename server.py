@@ -28,7 +28,10 @@ def predict():
     data_df = pd.DataFrame(parsed_data, index=[0])
 
     predictions = model.predict(data_df)
-    return jsonify({'predictions': predictions.tolist()})
+    y_proba_clf = model.predict_proba(data_df)
+    y_proba_clf = pd.DataFrame(y_proba_clf)
+
+    return jsonify({'predictions': predictions.tolist(), 'probability': y_proba_clf.to_dict()})
 
 if __name__ == '__main__':
     app.run(debug=True, host='localhost', port=13311)
