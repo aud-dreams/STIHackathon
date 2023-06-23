@@ -15,7 +15,7 @@ def predict():
         "Region": data['region'],
         "Wealth": data['wealth'],
         "Age Category": data['age'],
-        "Educational Level": data['educational'],
+        "Educational Level": data['education'],
         "Age at First Sex": data['age_of_first'],
         "Working Status": data['working_status'],
         "Marital Status": data['marital'],
@@ -31,4 +31,4 @@ def predict():
     return jsonify({'predictions': predictions.tolist()})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='localhost', port=13311)
