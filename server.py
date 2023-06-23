@@ -2,15 +2,15 @@ from flask import Flask, request, jsonify
 import pickle
 import pandas as pd
 
-with open('model.pkl', 'rb') as file:
-    model = pickle.load(file)
+model = pickle.load(open('model.pkl', 'rb'))
 
 app = Flask(__name__)
 
 @app.route('/')
 def predict():
     data = request.get_json()  # Get JSON payload from the request
-    # # Make predictions using the loaded model
+
+    # Make predictions using the loaded model
     parsed_data = {
         "Region": data['region'],
         "Wealth": data['wealth'],

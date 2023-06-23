@@ -92,7 +92,4 @@ y_proba_clf = clf.predict_proba(X_test)
 y_proba_clf = pd.DataFrame(y_proba_clf)
 print(y_proba_clf)
 
-
-
-with open('model.pkl', 'wb') as file:
-    pickle.dump(svm, file)
+pickle.dump(clf, open('model.pkl', 'wb'))
