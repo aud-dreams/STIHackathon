@@ -1,0 +1,4 @@
+*.csv filter=lfs diff=lfs merge=lfs -text
+eth_women.csv filter=lfs diff=lfs merge=lfs -text
+C:/Users/Hoang/UCI/STIHackathon/STIHackathon/model.py filter=lfs diff=lfs merge=lfs -text
+eth_men.csv filter=lfs diff=lfs merge=lfs -text
