@@ -25,7 +25,7 @@ def predict():
         "Sex": data['sex'],
     }
 
-    data_df = pd.DataFrame(parsed_data)
+    data_df = pd.DataFrame(parsed_data, index=[0])
 
     predictions = model.predict(data_df)
     return jsonify({'predictions': predictions.tolist()})
